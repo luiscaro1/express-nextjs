@@ -6,7 +6,8 @@
   "scripts": {
     "build": "next build",
     "dev": "nodemon index.js",
-    "start": "NODE_ENV=production node index.js"
+    "start": "NODE_ENV=production node index.js",
+    "heroku-postbuild": "next build"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
