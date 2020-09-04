@@ -9,7 +9,7 @@ const dev = process.env.NODE_ENV !== "production";
 //might need to change this
 app = Next({ dev });
 
-const handle = app.getRequestHandler();
+const handle = app.getRequestHandler(app);
 
 app
   .prepare()
