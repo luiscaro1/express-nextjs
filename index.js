@@ -14,9 +14,6 @@ const handle = app.getRequestHandler(app);
 app
   .prepare()
   .then(() => {
-    const parsedUrl = parse(req.url, true);
-    const { pathname, query } = parsedUrl;
-
     const server = express();
 
     server.use(bodyparser.urlencoded({ extended: false }));
@@ -25,7 +22,7 @@ app
     server.use("/api/hello", (req, res) => {
       res.send({ msg: "Hello" });
     });
-    if (!pathname.contains("api")) server.get("*", handle);
+    server.get("*", handle);
 
     server.listen(PORT, (err) => {
       if (err) throw err;
