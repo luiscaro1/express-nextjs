@@ -22,6 +22,7 @@ app
     server.use("/api/hello", (req, res) => {
       res.send({ msg: "Hello" });
     });
+    server.get("*", handle);
 
     server.listen(PORT, (err) => {
       if (err) throw err;
